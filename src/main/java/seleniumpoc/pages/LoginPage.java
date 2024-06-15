@@ -18,10 +18,6 @@ public class LoginPage {
 		
 	}
 	
-	//WebElement userName = driver.findElement(By.xpath(""));
-	
-	//page Factory
-	
 	@FindBy(xpath = "//input[@name = 'username']")
 	WebElement userNameField;
 	
@@ -31,12 +27,12 @@ public class LoginPage {
 	@FindBy(xpath = "//button[text() = ' Login ']")
 	WebElement loginButton;
 	
-	public HomePage doLogin(String userName, String password)
+	public DashBoardPage doLogin(String userName, String password)
 	{
 		userNameField.sendKeys(userName);
 		passwordField.sendKeys(password);
 		loginButton.click();
-		return new HomePage(driver);
+		return new DashBoardPage(driver);
 		
 	}
 	
